@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="{StaticResource Tertiary}">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="20" Spacing="20">
+        <Label Text="Sobre o Aplicativo"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource White}" />
+
+        <Label Text="Desenvolvedor: Caio Fernando Silva"
+               FontSize="20"
+               TextColor="{StaticResource White}"
+               HorizontalOptions="Center" />
+
+        <Label Text="Aplicativo criado para Agenda 13"
+               FontSize="20"
+               TextColor="{StaticResource White}"
+               HorizontalOptions="Center" />
+
+        <Label Text="Versão do aplicativo: 1.0"
+               FontSize="20"
+               TextColor="{StaticResource White}"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
