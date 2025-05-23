@@ -4,27 +4,29 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="{StaticResource Tertiary}">
+             BackgroundColor="{StaticResource MidnightBlue}">
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10"
                          Spacing="10">
 
         <Label Text="Cálculo da Diária"
+               HorizontalOptions="Center"
                FontFamily="Kalam"
                FontSize="50"
                TextColor="{StaticResource White}" />
 
-        <Frame Padding="10">
+        <Frame Padding="10" BackgroundColor="{StaticResource White}">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
 
                     <Label Grid.Row="0" Grid.Column="0"
-                           Text="Adultos:" />
+                           Text="Adultos:"
+                           TextColor="Black"/>
 
                     <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource White}"
+                           TextColor="{StaticResource Black}"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_adultos}"/>
 
@@ -32,13 +34,15 @@
                              x:Name="stp_adultos"
                              Minimum="0"
                              Maximum="10"
+                             BackgroundColor="{StaticResource Tertiary}"
                              Increment="1" />
 
                     <Label Grid.Row="1" Grid.Column="0"
-                           Text="Crianças:" />
+                           Text="Crianças:" 
+                           TextColor="Black"/>
 
                     <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource White}"
+                           TextColor="{StaticResource Black}"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_criancas}"/>
 
@@ -46,10 +50,13 @@
                              x:Name="stp_criancas"
                              Minimum="0"
                              Maximum="10"
+                             BackgroundColor="{StaticResource Tertiary}"
                              Increment="1" />
                 </Grid>
 
-                <Frame Padding="10" Margin="10">
+                <Frame Padding="10"
+                       Margin="10"
+                       BackgroundColor="MidnightBlue">
                     <VerticalStackLayout>
 
                         <Label Text="Escolha sua Suíte"
@@ -58,12 +65,14 @@
                                TextColor="{StaticResource White}"/>
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação" />
+                                Title="Selecione sua Acomodação"
+                                ItemDisplayBinding="{Binding Descricao}"/>
                     </VerticalStackLayout>
                 </Frame>
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="MidnightBlue">
                     <VerticalStackLayout Spacing="10">
 
                         <Label Text="Período da Estadia"
@@ -74,6 +83,7 @@
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" />
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
@@ -86,13 +96,15 @@
                 </Frame>
 
                 <Button Text="Avançar"
-                        BackgroundColor="{StaticResource Tertiary}"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="{StaticResource MidnightBlue}"
                         TextColor="{StaticResource White}"/>
 
                 <Button Text="Sobre"
                         Clicked="OnSobreClicked"
-                        BackgroundColor="{StaticResource White}"
+                        BackgroundColor="{StaticResource Gray200}"
                         TextColor="{StaticResource Tertiary}"
+                        HorizontalOptions="Center"
                         Margin="10"/>   
 
             </VerticalStackLayout>

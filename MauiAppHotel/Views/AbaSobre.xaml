@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.Sobre"
              Title="Sobre"
-             BackgroundColor="{StaticResource Tertiary}">
+             BackgroundColor="{StaticResource MidnightBlue}">
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="20" Spacing="20">
         <Label Text="Sobre o Aplicativo"
@@ -11,20 +11,29 @@
                FontAttributes="Bold"
                HorizontalOptions="Center"
                TextColor="{StaticResource White}" />
-
-        <Label Text="Desenvolvedor: Caio Fernando Silva"
-               FontSize="20"
-               TextColor="{StaticResource White}"
+        
+        <Frame Margin="10" BackgroundColor="White">
+            <VerticalStackLayout>
+        <Label Text="Developer: Caio Fernando Silva"
+               FontSize="17"
+               TextColor="{StaticResource Black}"
                HorizontalOptions="Center" />
 
         <Label Text="Aplicativo criado para Agenda 13"
-               FontSize="20"
-               TextColor="{StaticResource White}"
+               FontSize="17"
+               TextColor="{StaticResource Black}"
                HorizontalOptions="Center" />
 
         <Label Text="Versão do aplicativo: 1.0"
-               FontSize="20"
-               TextColor="{StaticResource White}"
+               FontSize="17"
+               TextColor="{StaticResource Black}"
                HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar" 
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 Clicked="Button_Clicked"/>  
     </VerticalStackLayout>
 </ContentPage>
